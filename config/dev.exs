@@ -8,6 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :microblog, MicroblogWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "microblog.viceroix.com", port: 80],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
@@ -52,7 +53,7 @@ config :phoenix, :stacktrace_depth, 20
 config :microblog, Microblog.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "microblog",
-  password: "qazplmwsxokn",
+  password: "eihuofaeP7",
   database: "microblog_dev",
   hostname: "localhost",
   pool_size: 10

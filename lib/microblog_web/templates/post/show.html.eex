@@ -3,23 +3,8 @@
 <ul>
 
   <li>
-    <strong>Poster:</strong>
-    <%= @post.poster %>
-  </li>
-
-  <li>
     <strong>Content:</strong>
     <%= @post.content %>
-  </li>
-
-  <li>
-    <strong>Likes:</strong>
-    <%= @post.likes %>
-  </li>
-
-  <li>
-    <strong>Comment:</strong>
-    <%= @post.comment %>
   </li>
 
 </ul>

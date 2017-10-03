@@ -36,7 +36,7 @@ defmodule MicroblogWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_microblog_key",
-    signing_salt: "525dAjvu"
+    signing_salt: "aTDmFPZC"
 
   plug MicroblogWeb.Router
 

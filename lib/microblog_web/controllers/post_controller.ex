@@ -15,7 +15,8 @@ defmodule MicroblogWeb.PostController do
   end
 
   def create(conn, %{"post" => post_params}) do
-    case Blog.create_post(post_params) do
+    user = conn.assigns[:current_user]
+    case Blog.create_post(Map.put(post_params, "user_id", user.id)) do
       {:ok, post} ->
         conn
         |> put_flash(:info, "Post created successfully.")

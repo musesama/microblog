@@ -3,10 +3,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Poster</th>
       <th>Content</th>
-      <th>Likes</th>
-      <th>Comment</th>
 
       <th></th>
     </tr>
@@ -14,10 +11,7 @@
   <tbody>
 <%= for post <- @posts do %>
     <tr>
-      <td><%= post.poster %></td>
       <td><%= post.content %></td>
-      <td><%= post.likes %></td>
-      <td><%= post.comment %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %></span>

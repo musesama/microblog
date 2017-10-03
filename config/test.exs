@@ -12,8 +12,8 @@ config :logger, level: :warn
 # Configure your database
 config :microblog, Microblog.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "microblog",
-  password: "qazplmwsxokn",
+  username: "postgres",
+  password: "postgres",
   database: "microblog_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
