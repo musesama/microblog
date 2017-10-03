@@ -1,3 +1,7 @@
+# Homework 4
+a user could login on the top-right corner of the nav bar, could post with the new post link and follow on the Users page.
+there are a lot of corner cases havnt get covered and the UI have to be improved.
+
 # Microblog
 
 To start your Phoenix server:

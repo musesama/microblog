@@ -1,0 +1,20 @@
+[Unit]
+Description=Microblog
+After=network.target
+
+[Service]
+Type=forking
+User=microblog
+Group=microblog
+WorkingDirectory=/home/microblog/microblog
+ExecStart=/home/microblog/microblog/bin/microblog start
+ExecStop=/home/microblog/microblog/bin/microblog stop
+Restart=on-failure
+RestartSec=5
+Environment=PORT=4000
+Environment=LANG=en_US.UTF-8
+SyslogIdentifier=nu_mart
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
