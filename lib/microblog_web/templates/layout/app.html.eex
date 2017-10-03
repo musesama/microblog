@@ -12,21 +12,41 @@
   </head>
 
   <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+      <nav class="navbar navbar-dark bg-dark navbar-expand-md">
+        <a class="navbar-brand" href="#">Dumblog</a>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <button class="navbar-toggler" type="button"
+                                       data-toggle="collapse" data-target="#main-navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="main-navbar">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <% active = nav_active?(@view_module, "Post") %>
+              <%= link "Posts", to: post_path(@conn, :index), class: "nav-link #{active}" %>
+            </li>          
+            <li class="nav-item">
+              <% active = nav_active?(@view_module, "User") %>
+              <%= link "Users", to: user_path(@conn, :index), class: "nav-link #{active}" %>
+            </li>          
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 my-2">
+            <%= if get_flash(@conn, :info) do %> 
+              <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+            <% end %>
+            <%= if get_flash(@conn, :error) do %> 
+              <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+            <% end %>
+          </div>
+        </div>
 
       <main role="main">
-        <%= render @view_module, @view_template, assigns %>
+      <%= render @view_module, @view_template, assigns %>
       </main>
 
     </div> <!-- /container -->
