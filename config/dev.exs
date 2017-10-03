@@ -8,6 +8,7 @@ use Mix.Config
 # with brunch.io to recompile .js and .css sources.
 config :microblog, MicroblogWeb.Endpoint,
   http: [port: 4000],
+  url: [host: "microblog.viceroix.com", port: 80],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,

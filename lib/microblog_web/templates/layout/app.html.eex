@@ -32,6 +32,19 @@
             </li>          
           </ul>
         </div>
+        <%= if @current_user do %>
+          <span class="text-light">
+            <%= @current_user.name %> |
+            <%= link("logout", to: session_path(@conn, :logout), method: :delete) %>
+          </span>
+        <% else %>
+          <%= form_for @conn, session_path(@conn, :login), 
+[as: "user", class: "form-inline w-75"], fn f -> %>
+<input type="text" placeholder="name" 
+                   class="form-control" name="name">
+<input type="submit" value="Log in" class="btn btn-primary">
+                                                                                                                <% end %>
+                                                                                                              <% end %>
       </nav>
       <div class="container">
         <div class="row">

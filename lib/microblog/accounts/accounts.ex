@@ -37,6 +37,10 @@ defmodule Microblog.Accounts do
   """
   def get_user!(id), do: Repo.get!(User, id)
 
+
+  def get_user_by_name(name) do
+    Repo.get_by(User, name: name)
+  end
   @doc """
   Creates a user.
 
