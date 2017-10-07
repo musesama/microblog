@@ -11,9 +11,9 @@ ExecStart=/home/microblog/microblog/bin/microblog start
 ExecStop=/home/microblog/microblog/bin/microblog stop
 Restart=on-failure
 RestartSec=5
-Environment=PORT=4000
+Environment=PORT=8000
 Environment=LANG=en_US.UTF-8
-SyslogIdentifier=nu_mart
+SyslogIdentifier=microblog
 RemainAfterExit=yes
 
 [Install]
