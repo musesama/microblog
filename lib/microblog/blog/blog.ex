@@ -8,6 +8,11 @@ defmodule Microblog.Blog do
 
   alias Microblog.Blog.Post
 
+  def get_posts_by_user_id(user_id) do
+    from(p in Post, where: p.user_id == ^user_id)
+    |> Repo.all
+  end
+
   @doc """
   Returns the list of posts.
 

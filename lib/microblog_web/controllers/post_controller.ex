@@ -4,12 +4,18 @@ defmodule MicroblogWeb.PostController do
   alias Microblog.Blog
   alias Microblog.Blog.Post
 
+  def index(conn, %{"user_id" => user_id}) do
+    posts = Blog.get_posts_by_user_id(user_id)
+    render(conn, "index.html", posts: posts)
+  end
+
   def index(conn, _params) do
     posts = Blog.list_posts()
     render(conn, "index.html", posts: posts)
   end
 
   def new(conn, _params) do
+    
     changeset = Blog.change_post(%Post{})
     render(conn, "new.html", changeset: changeset)
   end
