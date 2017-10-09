@@ -4,6 +4,13 @@ there are a lot of corner cases havnt get covered and the UI have to be improved
 
 # Microblog
 
+Demo:
+http://microblog.viceroix.com/
+
+Github Repo:
+https://github.com/musesama/microblog
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
