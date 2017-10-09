@@ -9,5 +9,30 @@
 
 </ul>
 
+<div id="post-likes"
+     data-path="<%= like_path(@conn, :index) %>"
+     data-post-id="<%= @post.id %>">
+  &nbsp;
+</div>
+
+<script id="likes-template" type="text/x-handlebars-template">
+  <div class="m-2">
+    <h2>Likes</h2>
+
+    {{#each data}}
+    <a href="/users">{{user_name}}</a>
+    {{else}}
+    <p>No likes yet.</p>
+    {{/each}}
+  </div>
+</script>
+
+<%= if @current_user do %>
+<div class="m-2">
+  <button id="like-add-button" class="btn btn-primary"
+          data-user-id="<%= @current_user.id %>">Like</button>
+</div>
+<% end %>
+
 <span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
 <span><%= link "Back", to: post_path(@conn, :index) %></span>
