@@ -1,3 +1,6 @@
+# Homework 5
+after login, a user may like a message when viewing a message. currently we allow multiple likes of one message from one user.
+
 # Homework 4
 a user could login on the top-right corner of the nav bar, could post with the new post link and follow on the Users page.
 there are a lot of corner cases havnt get covered and the UI have to be improved.
@@ -10,6 +13,9 @@ http://microblog.viceroix.com/
 Github Repo:
 https://github.com/musesama/microblog
 
+To Deploy:
+
+`./depoly.sh [dir to deploy]`
 
 To start your Phoenix server:
 
