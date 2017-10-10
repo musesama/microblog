@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# TODO: consider adapt with systemd
+# modified from https://github.com/NatTuck/nu_mart/blob/master/deploy.sh
+
 export PORT=8000
 export MIX_ENV=prod
 DIR=$1
