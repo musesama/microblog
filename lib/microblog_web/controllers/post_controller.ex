@@ -24,6 +24,7 @@ defmodule MicroblogWeb.PostController do
     user = conn.assigns[:current_user]
     case Blog.create_post(Map.put(post_params, "user_id", user.id)) do
       {:ok, post} ->
+        MicroblogWeb.Endpoint.broadcast("updates:all", "new_msg", post_params)
         conn
         |> put_flash(:info, "Post created successfully.")
         |> redirect(to: post_path(conn, :show, post))

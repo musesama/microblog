@@ -2,7 +2,7 @@ defmodule MicroblogWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", MicroblogWeb.RoomChannel
+  channel "updates:*", MicroblogWeb.UpdatesChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

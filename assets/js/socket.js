@@ -54,9 +54,22 @@ let socket = new Socket("/socket", {params: {token: window.userToken}})
 socket.connect()
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+let channel = socket.channel("updates:all", {})
 channel.join()
   .receive("ok", resp => { console.log("Joined successfully", resp) })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
+let handlebars = require("handlebars");
+$(function() {
+  // if we have to route like this, why dont we simply embed.
+  if (!$("#post-template").length > 0) {
+    return;
+  }
+  let tt = $($("#post-template")[0]);
+  let code = tt.html();
+  let tmpl = handlebars.compile(code);
+  channel.on("new_msg", payload => {
+	$("#posts-tb").prepend(tmpl(payload));
+  });
+});
 export default socket

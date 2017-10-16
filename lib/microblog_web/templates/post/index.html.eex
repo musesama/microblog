@@ -1,5 +1,14 @@
 <h2>Listing Posts</h2>
 
+<script id="post-template" type="text/x-handlebars-template">
+<td>{{content}}</td>
+
+      <td class="text-right">
+      <a class="btn btn-default btn-xs" href="/posts/{{id}}">Show</a>
+        </td>
+</script>
+
+
 <table class="table">
   <thead>
     <tr>
@@ -8,15 +17,17 @@
       <th></th>
     </tr>
   </thead>
-  <tbody>
-<%= for post <- @posts do %>
+  <tbody id="posts-tb">
+    <%= for post <- @posts do %>
     <tr>
       <td><%= post.content %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %></span>
+        <!--
         <span><%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        -->
       </td>
     </tr>
 <% end %>
