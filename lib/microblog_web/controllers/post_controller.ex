@@ -2,6 +2,7 @@ defmodule MicroblogWeb.PostController do
   use MicroblogWeb, :controller
 
   alias Microblog.Blog
+  alias Microblog.Accounts
   alias Microblog.Blog.Post
 
   def index(conn, %{"user_id" => user_id}) do
@@ -24,7 +25,9 @@ defmodule MicroblogWeb.PostController do
     user = conn.assigns[:current_user]
     case Blog.create_post(Map.put(post_params, "user_id", user.id)) do
       {:ok, post} ->
-        MicroblogWeb.Endpoint.broadcast("updates:all", "new_msg", post_params)
+        for f <- Accounts.get_followers(user.id) do
+          MicroblogWeb.Endpoint.broadcast("updates:#{f}", "new_msg", post_params)
+        end
         conn
         |> put_flash(:info, "Post created successfully.")
         |> redirect(to: post_path(conn, :show, post))

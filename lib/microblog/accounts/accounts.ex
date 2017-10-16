@@ -121,6 +121,20 @@ defmodule Microblog.Accounts do
     Repo.all(Follow)
   end
 
+  def get_follows(user_id) do
+    query = from f in Follow,
+      where: f.from_user_id == ^user_id,
+      select: f.to_user_id
+    Repo.all(query)
+  end
+
+  def get_followers(user_id) do
+    query = from f in Follow,
+      where: f.to_user_id == ^user_id,
+      select: f.from_user_id
+    Repo.all(query)
+  end
+
   @doc """
   Gets a single follow.
 
