@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/musesama/microblog.svg?branch=master)](https://travis-ci.org/musesama/microblog)
+
 # Homework 5
 after login, a user may like a message when viewing a message. currently we allow multiple likes of one message from one user.
 
