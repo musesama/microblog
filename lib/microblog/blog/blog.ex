@@ -170,24 +170,6 @@ defmodule Microblog.Blog do
   end
 
   @doc """
-  Updates a like.
-
-  ## Examples
-
-      iex> update_like(like, %{field: new_value})
-      {:ok, %Like{}}
-
-      iex> update_like(like, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_like(%Like{} = like, attrs) do
-    like
-    |> Like.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
   Deletes a Like.
 
   ## Examples
@@ -201,18 +183,5 @@ defmodule Microblog.Blog do
   """
   def delete_like(%Like{} = like) do
     Repo.delete(like)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking like changes.
-
-  ## Examples
-
-      iex> change_like(like)
-      %Ecto.Changeset{source: %Like{}}
-
-  """
-  def change_like(%Like{} = like) do
-    Like.changeset(like, %{})
   end
 end

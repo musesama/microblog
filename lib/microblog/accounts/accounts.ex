@@ -202,17 +202,4 @@ defmodule Microblog.Accounts do
   def delete_follow(%Follow{} = follow) do
     Repo.delete(follow)
   end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking follow changes.
-
-  ## Examples
-
-      iex> change_follow(follow)
-      %Ecto.Changeset{source: %Follow{}}
-
-  """
-  def change_follow(%Follow{} = follow) do
-    Follow.changeset(follow, %{})
-  end
 end

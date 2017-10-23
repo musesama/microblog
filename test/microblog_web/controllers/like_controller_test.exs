@@ -4,9 +4,9 @@ defmodule MicroblogWeb.LikeControllerTest do
   alias Microblog.Blog
   alias Microblog.Blog.Like
 
-  @create_attrs %{}
-  @update_attrs %{}
-  @invalid_attrs %{}
+  @create_attrs %{user_id: 1, post_id: 1}
+  @update_attrs %{user_id: 1, post_id: 2}
+  @invalid_attrs %{user_id: 2}
 
   def fixture(:like) do
     {:ok, like} = Blog.create_like(@create_attrs)

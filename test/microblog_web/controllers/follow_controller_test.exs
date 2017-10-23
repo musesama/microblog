@@ -3,9 +3,9 @@ defmodule MicroblogWeb.FollowControllerTest do
 
   alias Microblog.Accounts
 
-  @create_attrs %{}
-  @update_attrs %{}
-  @invalid_attrs %{}
+  @create_attrs %{from_user_id: 1,to_user_id: 2}
+  @update_attrs @create_attrs
+  @invalid_attrs %{from_user_id: 1}
 
   def fixture(:follow) do
     {:ok, follow} = Accounts.create_follow(@create_attrs)
