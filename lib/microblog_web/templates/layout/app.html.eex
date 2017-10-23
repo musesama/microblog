@@ -27,7 +27,7 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <% active = nav_active?(@view_module, "Post") %>
-              <%= link "Posts", to: post_path(@conn, :index), class: "nav-link #{active}" %>
+              <%= link "Feed", to: post_path(@conn, :index), class: "nav-link #{active}" %>
             </li>          
             <li class="nav-item">
               <% active = nav_active?(@view_module, "User") %>
@@ -42,9 +42,12 @@
           </span>
         <% else %>
           <%= form_for @conn, session_path(@conn, :login), 
-[as: "user", class: "form-inline w-75"], fn f -> %>
+[as: "user", class: "form-inline w-75"], fn _f -> %>
 <input type="text" placeholder="name" 
                    class="form-control" name="name">
+<input type="password" placeholder="password"
+                   class="form-control" name="password">
+
 <input type="submit" value="Log in" class="btn btn-primary">
                                                                                                                 <% end %>
                                                                                                               <% end %>

@@ -5,7 +5,6 @@ defmodule Microblog.Accounts.Follow do
 
 
   schema "follows" do
-    # todo: add constraint
     field :from_user_id, :id
     field :to_user_id, :id
 
@@ -17,5 +16,6 @@ defmodule Microblog.Accounts.Follow do
     follow
     |> cast(attrs, [:from_user_id, :to_user_id])
     |> validate_required([:from_user_id, :to_user_id])
+    |> unique_constraint(:to_user_id, name: :unique_follow_index)
   end
 end

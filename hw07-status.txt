@@ -1,0 +1,45 @@
+CS4550 Web Dev, Fall 2017.
+
+HW06 status report form.
+
+Please answer the following questions and submit the filled-in file to Bottlenose.
+
+
+1. What's your name?
+   Xiangyu Li
+
+2. What's the link to your Github repo's releases page?
+   
+
+3. What's the link to your deployed Microblog app?
+   http://microblog.viceroix.com/
+
+4. Did you successfully deploy? If not, what doesn't work?
+   Yes
+
+5. Did you successfully implement passwords securely? If not, what doesn't work?
+   Yes
+
+6. Did you successfully implement admin users? What paths are admin-only? What paths
+   are accessible to all users.
+   No
+
+7. What changes did you make to clean up your application layout and navigation?
+   If a user havn't signed in, he/she would be guide to the signup/login page.
+   Modifing of users and posts are hidden.
+
+8. Did you complete any catch up tasks? Which ones? Is there anything still not working
+   about those features?
+
+
+9. Did you complete any additional tasks? Which ones? For each, describe how it should
+   work and how that differs from your deployed functionality.
+   1. no diff from the requirement.
+
+A. Did you complete any bonus addtional goals for extra credit? For each, describe how
+   it should work and how that differs from your deployed functionality.
+
+
+B. Is there any other useful information that you want to provide for grading?
+
+

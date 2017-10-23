@@ -11,18 +11,25 @@ defmodule MicroblogWeb.PostController do
   end
 
   def index(conn, _params) do
-    posts = Blog.list_posts()
-    render(conn, "index.html", posts: posts)
+    posts = Blog.list_posts() 
+    user = conn.assigns[:current_user]
+    if user do
+      redirect(conn, to: user_post_path(conn, :index, user.id))
+    else
+      redirect(conn, to: page_path(conn, :index))
+    end
   end
 
   def new(conn, _params) do
-    
     changeset = Blog.change_post(%Post{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"post" => post_params}) do
     user = conn.assigns[:current_user]
+    if user == nil do
+      redirect conn, to: page_path(conn, :index)
+    end
     case Blog.create_post(Map.put(post_params, "user_id", user.id)) do
       {:ok, post} ->
         for f <- Accounts.get_followers(user.id) do

@@ -33,6 +33,8 @@ defmodule Microblog.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:comeonin, "~> 4.0"},
+      {:argon2_elixir, "~> 1.2"},
       {:distillery, "~> 1.5", runtime: false},
       {:phoenix, "~> 1.3.0"},
       {:phoenix_pubsub, "~> 1.0"},
