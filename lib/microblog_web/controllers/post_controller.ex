@@ -14,7 +14,8 @@ defmodule MicroblogWeb.PostController do
     posts = Blog.list_posts() 
     user = conn.assigns[:current_user]
     if user do
-      redirect(conn, to: user_post_path(conn, :index, user.id))
+      posts = Blog.get_follows_posts_by_user_id(user.id)
+      render(conn, "index.html", posts: posts)
     else
       redirect(conn, to: page_path(conn, :index))
     end

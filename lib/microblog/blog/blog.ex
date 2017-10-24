@@ -10,9 +10,17 @@ defmodule Microblog.Blog do
   @doc """
   Returns posts by the users followed by user whose id is user_id
   """
-  def get_posts_by_user_id(user_id) do
+  def get_follows_posts_by_user_id(user_id) do
     follows = Microblog.Accounts.get_follows(user_id)
     from(p in Post, where: p.user_id in ^follows, order_by: [desc: p.updated_at])
+    |> Repo.all
+    |> Repo.preload(:user)
+  end
+
+  def get_posts_by_user_id(user_id) do
+    from(p in Post,
+      where: p.user_id == ^user_id,
+      order_by: [desc: p.updated_at])
     |> Repo.all
     |> Repo.preload(:user)
   end
