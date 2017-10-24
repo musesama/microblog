@@ -6,7 +6,11 @@ defmodule MicroblogWeb.UserController do
 
   def index(conn, _params) do
     users = Accounts.list_users()
-    render(conn, "index.html", users: users)
+    if conn.assigns[:current_user] do
+      render(conn, "index.html", users: users)
+    else
+      redirect(conn, to: page_path(conn, :index))
+    end
   end
 
   def new(conn, _params) do
