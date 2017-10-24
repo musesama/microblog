@@ -70,5 +70,10 @@
 
     </div> <!-- /container -->
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <script>
+    for (v of document.getElementsByClassName('content')) {
+      v.innerHTML = window.marked(v.innerText)
+    }
+    </script>
   </body>
 </html>

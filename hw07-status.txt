@@ -36,11 +36,12 @@ Please answer the following questions and submit the filled-in file to Bottlenos
    work and how that differs from your deployed functionality.
    1. Https is set up. Non-https requests are redirected. The former deployed version only has http.
    2. Ultilize valid/invalid class of Bootstrap on the user registration form. The former use the generated form.
-   4. admin
+   4. Add an "admin" user, who can manage all the resources. Non-admins shouldn't be able to edit or delete other users or messages/posts belonging to other users.
+   7. Add message formatting with Markdown.
 
 A. Did you complete any bonus addtional goals for extra credit? For each, describe how
    it should work and how that differs from your deployed functionality.
-
+   No.
 
 B. Is there any other useful information that you want to provide for grading?
 

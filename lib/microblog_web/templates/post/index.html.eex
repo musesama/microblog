@@ -18,7 +18,7 @@
   <tbody id="posts-tb">
     <%= for post <- @posts do %>
     <tr>
-      <td><%= post.content %></td>
+      <td class='content'><%= post.content %></td>
       <td><%= post.user.name %></td>
 
       <%= if is_admin?(@current_user) do %>
@@ -32,5 +32,4 @@
 <% end %>
   </tbody>
 </table>
-
 <span><%= if @current_user, do: link "New Post", to: post_path(@conn, :new) %></span>
