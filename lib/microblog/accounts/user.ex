@@ -7,6 +7,8 @@ defmodule Microblog.Accounts.User do
 
   schema "users" do
     field :name, :string
+    field :is_admin?, :boolean
+
     field :password_hash, :string
     field :pw_tries, :integer
     field :pw_last_try, :utc_datetime
@@ -22,7 +24,7 @@ defmodule Microblog.Accounts.User do
   @doc false
   def changeset(%User{} = user, attrs) do
     user
-    |> cast(attrs, [:name, :password, :password_confirmation])
+    |> cast(attrs, [:name, :is_admin?, :password, :password_confirmation])
     |> validate_confirmation(:password)
     |> validate_password(:password)
     |> put_pass_hash()

@@ -26,15 +26,17 @@ Please answer the following questions and submit the filled-in file to Bottlenos
 
 7. What changes did you make to clean up your application layout and navigation?
    If a user havn't signed in, he/she would be guide to the signup/login page.
-   Modifing of users and posts are hidden.
+   The pages to modify users and posts are hidden.
 
 8. Did you complete any catch up tasks? Which ones? Is there anything still not working
    about those features?
-
+   No. I missed the tests.
 
 9. Did you complete any additional tasks? Which ones? For each, describe how it should
    work and how that differs from your deployed functionality.
-   1. no diff from the requirement.
+   1. Https is set up. Non-https requests are redirected. The former deployed version only has http.
+   2. Ultilize valid/invalid class of Bootstrap on the user registration form. The former use the generated form.
+   4. admin
 
 A. Did you complete any bonus addtional goals for extra credit? For each, describe how
    it should work and how that differs from your deployed functionality.

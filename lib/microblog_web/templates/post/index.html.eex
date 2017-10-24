@@ -21,12 +21,13 @@
       <td><%= post.content %></td>
       <td><%= post.user.name %></td>
 
-      <!--<td class="text-right">
-        <span><%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %></span>
+      <%= if is_admin?(@current_user) do %>
+      <td class="text-right">
+        <!--<span><%= link "Show", to: post_path(@conn, :show, post), class: "btn btn-default btn-xs" %></span>-->
         <span><%= link "Edit", to: post_path(@conn, :edit, post), class: "btn btn-default btn-xs" %></span>
         <span><%= link "Delete", to: post_path(@conn, :delete, post), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
       </td>
-      -->
+      <%= end %>
     </tr>
 <% end %>
   </tbody>
